@@ -172,7 +172,7 @@ int main(int argc, char **argv)
 {
   if (argc == 1)
   {
-    print_help(argv[0]);
+    print_help();
     return 0;
   }
   for (int i = 1; i < argc; i++)
@@ -180,6 +180,12 @@ int main(int argc, char **argv)
     if (strcmp(argv[i], "--help") == 0 || strcmp(argv[i], "-h") == 0)
     {
       print_help();
+      return 0;
+    }
+    if (strcmp(argv[i], "--version") == 0 ||
+        strcmp(argv[i], "-v") == 0)
+    {
+      print_version();
       return 0;
     }
   }

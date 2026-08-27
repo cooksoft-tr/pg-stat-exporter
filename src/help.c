@@ -1,11 +1,12 @@
 #include <stdio.h>
 
 #include "help.h"
+#include "version.h"
 
-void print_help()
+void print_help(void)
 {
   printf(
-      "pg-stat-exporter - PostgreSQL metrics exporter\n"
+      "pg-stat-exporter %s - PostgreSQL metrics exporter\n"
       "\n"
       "Usage:\n"
       "  pg-stat-exporter [OPTIONS]\n"
@@ -35,7 +36,16 @@ void print_help()
       "      Comma-separated list of CivetWeb server configuration options.\n"
       "      ENV: PG_STAT_EXPORTER_HTTP_SERVER_OPTIONS\n"
       "\n"
-      "  -h, --help\n"
+      "  --help, -h\n"
       "      Show this help message and exit.\n"
-      "\n");
+      "\n"
+      "  --version, -v\n"
+      "      Show version information and exit.\n"
+      "\n",
+      PG_STAT_EXPORTER_VERSION);
+}
+
+void print_version(void)
+{
+  printf("%s\n", PG_STAT_EXPORTER_VERSION);
 }
