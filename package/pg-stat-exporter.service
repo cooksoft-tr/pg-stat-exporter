@@ -1,0 +1,21 @@
+[Unit]
+Description=PostgreSQL Stat Metrics Exporter
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/default/pg-stat-exporter
+WorkingDirectory=/usr/lib/pg-stat-exporter
+
+ExecStart=/usr/bin/pg-stat-exporter
+
+User=pg-stat-exporter
+Group=pg-stat-exporter
+StandardOutput=journal
+StandardError=journal
+KillMode=process
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

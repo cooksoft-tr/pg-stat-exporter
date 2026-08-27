@@ -1,0 +1,6 @@
+release/*
+debug/*
+lib/civetweb.o
+include/civetweb.h
+include/version.h
+*:Zone.Identifier

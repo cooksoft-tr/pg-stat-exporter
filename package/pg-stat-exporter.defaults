@@ -1,0 +1,20 @@
+# Configuration for pg_stat_exporter
+
+# PostgreSQL connection string
+# PG_STAT_EXPORTER_DSN=postgresql://
+
+# Comma-separated list of metrics to collect (e.g. pg_stat_wal,pg_stat_database)
+# PG_STAT_EXPORTER_GLOBAL_METRICS=
+
+# Comma-separated list of database metrics to collect (e.g. temp_files)
+# PG_STAT_EXPORTER_DATABASE_METRICS=
+
+# Databases to exclude when database metrics support is expanded (e.g. postgres)
+# PG_STAT_EXPORTER_EXCLUDED_DATABASES=
+
+# Run as HTTP server (true = HTTP server, false = stdout-only)
+# PG_STAT_EXPORTER_HTTP_SERVER=false
+
+# Comma-separated list of server options as key,value for Civetweb (e.g. "listening_ports,9187,num_threads,10")
+# PG_STAT_EXPORTER_HTTP_SERVER_OPTIONS=
+
