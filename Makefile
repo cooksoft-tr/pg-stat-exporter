@@ -11,10 +11,14 @@ INCLUDES=-Iinclude -I/usr/include -I/usr/local/include
 LDFLAGS=-lpq -ljson-c -lmustach -lsystemd
 
 CFLAGS_DEBUG=-O0 -Wall $(INCLUDES) -g
+CFLAGS_DEBUG += -DTEMPLATE_DIR=\"template\" \
+								-DSQL_DIR=\"sql\" \
+
 CFLAGS_RELEASE=-O2 -Wall $(INCLUDES)
-CFLAGS += -DTEMPLATE_DIR=\"template\" \
-					-DSQL_DIR=\"sql\" \
-					-DCUSTOM_TEMPLATE_DIR=\"/etc/pg-stat-exporter/template\" \
+CFLAGS_RELEASE += -DTEMPLATE_DIR=\"/usr/lib/pg-stat-exporter/template\" \
+									-DSQL_DIR=\"/usr/lib/pg-stat-exporter/sql\" \
+
+CFLAGS += -DCUSTOM_TEMPLATE_DIR=\"/etc/pg-stat-exporter/template\" \
 					-DCUSTOM_SQL_DIR=\"/etc/pg-stat-exporter/sql\" \
 
 # Debug build
