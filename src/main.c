@@ -13,6 +13,7 @@
 
 #include "config.h"
 #include "errors.h"
+#include "help.h"
 #include "path_util.h"
 #include "pg.h"
 #include "template.h"
@@ -169,6 +170,20 @@ static int mg_log_message(const struct mg_connection *conn, const char *msg)
 
 int main(int argc, char **argv)
 {
+  if (argc == 1)
+  {
+    print_help(argv[0]);
+    return 0;
+  }
+  for (int i = 1; i < argc; i++)
+  {
+    if (strcmp(argv[i], "--help") == 0 || strcmp(argv[i], "-h") == 0)
+    {
+      print_help();
+      return 0;
+    }
+  }
+
   PostgresMetricsConfig *cfg = load_config(argc, argv);
   if (!cfg)
   {
