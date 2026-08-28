@@ -1,6 +1,8 @@
-release/*
+.local
+*:Zone.Identifier
+build/*
 debug/*
-lib/civetweb.o
 include/civetweb.h
 include/version.h
-*:Zone.Identifier
+lib/civetweb.o
+release/*
